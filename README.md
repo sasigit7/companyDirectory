@@ -13,8 +13,15 @@
 <p align="center"> Live Link: <a href="https://companydirectory.shashwebdev.com/" alt="Company Directory"/>Company Directory</a></p>
 
 ## Application Responsiveness Across Multiple Devices:
-
-
+<img src="https://user-images.githubusercontent.com/24832458/110354240-dd53b180-802f-11eb-8f56-02212fd2d62f.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/24832458/110354265-e3e22900-802f-11eb-8e16-6728f42af517.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/24832458/110354279-e6dd1980-802f-11eb-9e97-a5d069681bce.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/24832458/110354286-e8a6dd00-802f-11eb-857d-50a97a1b5780.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/24832458/110354294-eb093700-802f-11eb-9f86-d495f3afc14b.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/24832458/110354311-ee042780-802f-11eb-87be-16221a139424.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/24832458/110354320-efcdeb00-802f-11eb-840e-933aa0103307.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/24832458/110354325-f197ae80-802f-11eb-80e6-56e1bce3a870.png" width="30%"></img> 
+<img src="https://user-images.githubusercontent.com/24832458/110354342-f5c3cc00-802f-11eb-8945-06ebd7b328c5.png" width="30%"></img> 
 
 ## Technologies & Tools I used for this project 🛠️
 <p> Front-end -> HTML, CSS, BootStrap, Javascript, JQuery</p>
