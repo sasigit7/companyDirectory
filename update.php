@@ -1,17 +1,17 @@
 <?php
 include ('conn.php');
  if (isset($_POST['eid'])) {
-        $eid = $_POST['eid'];
-        $lastname = $_POST['lastname'];
+        // $eid = $_POST['eid'];
         $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
         $jobtitle = $_POST['jobtitle'];
         $email = $_POST['email'];
         $location = $_POST['location'];
         $department = $_POST['department'];
      
         $update = "UPDATE personnel, department, location 
-    SET personnel.lastname =  '$lastname', 
-        personnel.firstname = '$firstname', 
+    SET personnel.firstname = '$firstname',
+        personnel.lastname =  '$lastname', 
         personnel.jobtitle = '$jobtitle',
         personnel.email = '$email',
 		personnel.location = '$location',

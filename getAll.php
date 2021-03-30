@@ -3,11 +3,11 @@
     // echo $_POST['emp'];
     // if (isset($_POST['emp'])) {
      // $emp = $_POST['emp'];
-        $query = "SELECT p.id, p.lastName, p.firstName, p.jobTitle, p.email, d.name as department, l.name 
+        $query = "SELECT p.id, p.firstName, p.lastName, p.jobTitle, p.email, d.name as department, l.name 
         as location FROM personnel p 
         LEFT JOIN department d ON (d.id = p.departmentID) 
         LEFT JOIN location l ON (l.id = d.locationID) 
-        ORDER BY p.lastName, p.firstName, d.name, l.name";
+        ORDER BY p.firstName, p.lastName, d.name, l.name";
         
         $result = $conn->query($query);
     
@@ -34,8 +34,9 @@
                     <div class="#">
                         <div class="updDelBox">
                             <h2>
-                                <?php echo $r->lastName; ?>
                                 <?php echo $r->firstName; ?>
+                                <?php echo $r->lastName; ?>
+
                             </h2>
                             <hr>
                             <div class="mt-1">

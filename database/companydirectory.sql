@@ -80,7 +80,7 @@ INSERT INTO `location` (`id`, `name`) VALUES
 (1, 'London'),
 (2, 'Munich'),
 (3, 'Paris'),
-(4, 'Munich'),
+(4, 'Manchester'),
 (5, 'Rome');
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
 -- --------------------------------------------------------

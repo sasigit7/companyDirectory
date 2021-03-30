@@ -1,8 +1,15 @@
 body {
-  background-color: #8A2387 !important;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #8e9eab !important; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 select,
@@ -61,7 +68,7 @@ h3 {
 }
 
 h3 {
-  background-color: #0275d8;
+  color: #0275d8;
   border-radius: 10px;
   padding: 10px;
 }
@@ -75,7 +82,7 @@ p {
 
 .update-btn {
   position: relative;
-  /* height: 630px; */
+  max-height: 630px;
 }
 
 .img-thumbnail {
@@ -86,15 +93,15 @@ p {
 .update-bottom {
   background: #0275d8;
   color: #fff;
-  right: 16px;
+  right: 0.1px;
   position: absolute;
-  bottom: 0;
+  top: 0;
   width: 90px;
   font-size: 15px;
-  height: 40px;
+  height: 30px;
   text-align: center;
-  line-height: 2.3;
-  padding: -20px;
+  line-height: 1.8;
+  padding: -10px;
   border-radius: 5px;
 }
 
@@ -111,7 +118,7 @@ span.titleHead {
 
 .card-box {
   border: 1px solid rgb(212, 202, 202);
-  padding: 25px 10px;
+  padding: 5px 10px;
   margin-bottom: 10px;
 }
 
@@ -134,7 +141,7 @@ span.titleHead {
 /* Scroll to top  */
 #button {
   display: inline-block;
-  background-color: #F27121;
+  background-color: #f27121;
   width: 50px;
   height: 50px;
   text-align: center;

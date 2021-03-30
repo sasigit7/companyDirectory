@@ -1,6 +1,6 @@
 <?php include('conn.php');
 // The LEFT JOIN keyword returns all records from the left table (table1), and the matched records from the right table (table2). The result is NULL from the right side, if there is no match.
-$query = 'SELECT p.id, p.lastName, p.firstName, p.jobTitle, p.email, d.name as department, l.name as location FROM personnel p LEFT JOIN department d ON (d.id = p.departmentID) LEFT JOIN location l ON (l.id = d.locationID) ORDER BY p.lastName, p.firstName, d.name, l.name';
+$query = 'SELECT p.id, p.firstName, p.lastName, p.jobTitle, p.email, d.name as department, l.name as location FROM personnel p LEFT JOIN department d ON (d.id = p.departmentID) LEFT JOIN location l ON (l.id = d.locationID) ORDER BY p.firstName, p.lastName, d.name, l.name';
 // Execute/Perform the query on the database
 $result = $conn->query($query);
 // Check whether the data is coming from the database on to the page dynamically by using the while loop 
@@ -33,7 +33,7 @@ $result = $conn->query($query);
                     <?php while($r=$result->fetch_object()) { ?>
                     <div class="col-lg-4 col-md-5 col-sm-6">
                         <div class="card-box">
-                            <div class="update-btn" style="height: 630px;">
+                            <div class="update-btn">
                                 <div class="#">
                                     <img src="Assets/images/unisexAvatar.jpg" class="img-thumbnail img-fluid" alt="">
                                     <!-- Edit Button trigger modal -->
@@ -47,8 +47,9 @@ $result = $conn->query($query);
                                         <div class="#">
                                             <div class="updDelBox">
                                                 <h2>
-                                                    <?php echo $r->lastName; ?>
                                                     <?php echo $r->firstName; ?>
+                                                    <?php echo $r->lastName; ?>
+
                                                 </h2>
                                                 <hr>
                                                 <div class="mt-1">
@@ -102,18 +103,19 @@ $result = $conn->query($query);
                 <div class="modal-body">
                     <!-- Edit Form Start -->
                     <form>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="#">ID</label>
                             <input type="text" class="form-control" id="eid" aria-describedby="eid" readonly>
+                        </div> -->
+                        <div class="form-group">
+                            <label for="#">First Name</label>
+                            <input type="text" class="form-control" id="firstname" aria-describedby="firstname">
                         </div>
                         <div class="form-group">
                             <label for="#">Last Name</label>
                             <input type="text" class="form-control" id="lastname" aria-describedby="lastname">
                         </div>
-                        <div class="form-group">
-                            <label for="#">First Name</label>
-                            <input type="text" class="form-control" id="firstname" aria-describedby="firstname">
-                        </div>
+
                         <div class="form-group">
                             <label for="#">Job Title</label>
                             <input type="text" class="form-control" id="jobtitle" aria-describedby="jobtitle"
@@ -123,13 +125,38 @@ $result = $conn->query($query);
                             <label for="#">Email</label>
                             <input type="email" class="form-control" id="email" aria-describedby="email">
                         </div>
+
+
                         <div class="form-group">
                             <label>Department</label>
-                            <input type="text" class="form-control" id="department" aria-describedby="department">
+
+                            <?php
+							$dep_query = "SELECT * FROM department";
+							$dep_result = $conn->query($dep_query);
+							echo "<select id='department' class='form-control'>
+							<option value=''>Select Department</option>";
+							while($row=$dep_result->fetch_object())
+							{
+								echo "<option value='$row->id'>$row->name</option>";
+							}
+							echo "</select>";
+							?>
+                            <!-- <input type="text" class="form-control" id="department" aria-describedby="department"> -->
                         </div>
                         <div class="form-group">
                             <label>Location</label>
-                            <input type="text" class="form-control" id="location" aria-describedby="location">
+                            <?php
+							$loc_query = "SELECT * FROM location";
+							$loc_result = $conn->query($loc_query);
+							echo "<select id='location' class='form-control'>
+							<option value=''>Select Location</option>";
+							while($row=$loc_result->fetch_object())
+							{
+								echo "<option value='$row->id'>$row->name</option>";
+							}
+							echo "</select>";
+							?>
+                            <!-- <input type="text" class="form-control" id="location" aria-describedby="location"> -->
                         </div>
                         <button type="submit" id="updateEmp" class="btn btn-primary">Update</button>
                     </form>
@@ -215,7 +242,7 @@ $result = $conn->query($query);
                         <div class="form-group">
                             <label for="#">Department</label>
                             <input type="text" class="form-control" id="departmentAdd" value=""
-                                placeholder="Department Name">
+                                placeholder="Add New Department Name">
                             <br>
                             <?php
 							$add_loc_query = "SELECT * FROM location";
@@ -329,7 +356,7 @@ $result = $conn->query($query);
                         <div class="form-group">
                             <label for="#">Location</label>
                             <input type="text" class="form-control" id="locationAdd" value=""
-                                placeholder="Location Name">
+                                placeholder="Add New Location Name">
                         </div>
                         <button type="submit" class="btn btn-primary" id="add_location">Add</button>
                     </form>
@@ -367,7 +394,7 @@ $result = $conn->query($query);
 							?>
                             <br>
                             <input type="text" class="form-control" id="new_location" value=""
-                                placeholder="Add New Location Name">
+                                placeholder="Update Location Name">
                         </div>
                         <button type="submit" class="btn btn-primary" id="update_location">Update</button>
                     </form>
